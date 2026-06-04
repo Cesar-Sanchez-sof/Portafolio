@@ -184,7 +184,6 @@ const CATEGORY_META = {
 export function AcademicHistory() {
   const [searchTerm, setSearchTerm] = useState("")
   const [activeCategory, setActiveCategory] = useState<Category | "all">("all")
-  const [isPdfOpen, setIsPdfOpen] = useState(false)
 
   // Filter courses based on search term and category
   const getFilteredCourses = () => {
@@ -254,55 +253,6 @@ export function AcademicHistory() {
           </CardContent>
         </Card>
       </div>
-
-      {/* PDF Interactive Viewer */}
-      <Card className="bg-gradient-to-r from-primary/10 via-secondary/10 to-card border-primary/20">
-        <CardHeader className="pb-3">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <Award className="h-5 w-5 text-primary animate-pulse" />
-                Documento Académico Oficial
-              </CardTitle>
-              <CardDescription className="text-sm">
-                Estructura curricular y asignaturas cursadas emitido por la UPAO (Solo vista previa)
-              </CardDescription>
-            </div>
-            <div className="flex gap-2 w-full sm:w-auto">
-              <Dialog open={isPdfOpen} onOpenChange={setIsPdfOpen}>
-                <DialogTrigger asChild>
-                  <Button variant="outline" size="sm" className="w-full sm:w-auto gap-2 hover:bg-muted/50 border-primary/20">
-                    <Eye className="h-4 w-4" />
-                    Ver Histórico (Vista previa)
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
-                  <DialogHeader className="pb-2">
-                    <DialogTitle className="flex justify-between items-center text-foreground">
-                      <span>Histórico Académico - UPAO</span>
-                    </DialogTitle>
-                    <DialogDescription>
-                      Registro completo de cursos y créditos aprobados (Solo Lectura).
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
-                    <iframe
-                      src="/Historico_Academico.pdf#toolbar=0&navpanes=0"
-                      className="w-full h-full"
-                      title="Histórico Académico PDF"
-                    />
-                  </div>
-                  <div className="flex justify-end gap-2 pt-4">
-                    <Button variant="outline" onClick={() => setIsPdfOpen(false)}>
-                      Cerrar
-                    </Button>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </div>
-        </CardHeader>
-      </Card>
 
       {/* Filter and Search Bar */}
       <div className="space-y-4">
