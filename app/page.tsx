@@ -132,15 +132,41 @@ export default function Page() {
               </header>
               <div className="z-10 sm:col-span-6">
                 <h3 className="font-medium leading-snug text-foreground">
-                  <div>
-                    <span className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base">
-                      Ingeniería de Computación y Sistemas · UPAO
-                    </span>
-                  </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base cursor-pointer text-left focus:outline-none"
+                      >
+                        <span className="flex items-center gap-2">
+                          Ingeniería de Computación y Sistemas · UPAO
+                          <Eye className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity text-primary" />
+                        </span>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
+                      <DialogHeader className="pb-2">
+                        <DialogTitle className="text-foreground">
+                          Nueva Malla Curricular: Ing. de Sistemas e Inteligencia Artificial
+                        </DialogTitle>
+                        <DialogDescription>
+                          Detalles de la carrera y el plan de estudios actualizado (Solo Vista Previa)
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
+                        <iframe
+                          src="/Estudia_Ingenieria_Sistemas_e_IA.pdf#toolbar=0&navpanes=0"
+                          className="w-full h-full"
+                          title="Plan de Estudios UPAO"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </h3>
                 <p className="mt-2 text-sm leading-normal text-muted-foreground">
-                  Formación integral en desarrollo de software, algoritmos avanzados y gestión de infraestructura
-                  tecnológica.
+                  Formación integral en desarrollo de software, algoritmos avanzados y gestión de infraestructura tecnológica.
+                </p>
+                <p className="mt-2 text-xs italic text-muted-foreground/80 leading-relaxed">
+                  (La carrera se inició bajo el plan de estudios de Ingeniería de Computación y Sistemas, pero a inicios del año 2025 la UPAO actualizó la malla curricular y denominación oficial a <strong>Ingeniería de Sistemas e Inteligencia Artificial</strong>).
                 </p>
               </div>
             </div>
