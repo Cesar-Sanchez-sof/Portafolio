@@ -50,6 +50,14 @@ export function PortfolioLayout({ children }: { children: ReactNode }) {
                       </span>
                     </a>
                   </li>
+                  <li>
+                    <a className="group flex items-center py-3" href="#academic">
+                      <span className="nav-indicator mr-4 h-px w-8 bg-muted-foreground transition-all group-hover:w-16 group-hover:bg-primary group-focus-visible:w-16 group-focus-visible:bg-primary motion-reduce:transition-none" />
+                      <span className="nav-text text-xs font-bold uppercase tracking-widest text-muted-foreground group-hover:text-primary group-focus-visible:text-primary">
+                        Historial Académico
+                      </span>
+                    </a>
+                  </li>
                 </ul>
               </nav>
             </div>

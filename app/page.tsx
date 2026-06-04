@@ -2,7 +2,16 @@ import { PortfolioLayout } from "@/components/portfolio-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Brain, Code, Database, Zap, ExternalLink } from "lucide-react"
+import { Brain, Code, Database, Zap, ExternalLink, Eye } from "lucide-react"
+import { AcademicHistory } from "@/components/academic-history"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 export default function Page() {
   return (
@@ -42,8 +51,7 @@ export default function Page() {
               <CardTitle className="text-lg">IA & Machine Learning</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              Modelos de Deep Learning, CNNs, Aprendizaje por Refuerzo y Percepción Computacional. Especializado en
-              aplicaciones prácticas de visión por computadora.
+              Diseño e implementación de modelos de Machine Learning, Percepción Computacional (visión artificial) y algoritmos de IA. Formación alineada con los principios y técnicas de Inteligencia Artificial de la UPAO.
             </CardContent>
           </Card>
 
@@ -55,8 +63,7 @@ export default function Page() {
               <CardTitle className="text-lg">Ingeniería de Software</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              Arquitectura de sistemas, Patrones de diseño, Metodologías Ágiles (Scrum) e Infraestructura como Código
-              (IaC).
+              Arquitectura de Sistemas, Patrones de Diseño, Ingeniería de Requisitos y metodologías ágiles de desarrollo como Agile Development (Scrum).
             </CardContent>
           </Card>
 
@@ -65,11 +72,10 @@ export default function Page() {
               <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                 <Database className="h-6 w-6" />
               </div>
-              <CardTitle className="text-lg">Backend & Data</CardTitle>
+              <CardTitle className="text-lg">Backend & Data Science</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              Dominio de Laravel (PHP), PostgreSQL con enfoque en escalabilidad, y procesamiento distribuido con
-              Spark/Kafka.
+              Gestión avanzada de bases de datos relacionales (PostgreSQL/SGBD) y desarrollo backend en Laravel, integrando conocimientos de Gobierno de Datos y Big Data & Analítica.
             </CardContent>
           </Card>
 
@@ -78,10 +84,10 @@ export default function Page() {
               <div className="p-2 rounded-lg bg-secondary/10 text-secondary group-hover:bg-secondary/20 transition-colors">
                 <Zap className="h-6 w-6" />
               </div>
-              <CardTitle className="text-lg">Automatización Inteligente</CardTitle>
+              <CardTitle className="text-lg">Automatización & IoT</CardTitle>
             </CardHeader>
             <CardContent className="text-sm text-muted-foreground">
-              Modelado BPMN en Bizagi, flujos complejos en n8n e implementación de Intelligent Process Automation (IPA).
+              Optimización y automatización de flujos complejos mediante n8n e Intelligent Process Automation (IPA). Modelado de procesos (BPMN) en Bizagi e integración de dispositivos con Internet de las Cosas (IoT).
             </CardContent>
           </Card>
         </div>
@@ -89,13 +95,24 @@ export default function Page() {
         <div className="mt-12">
           <h3 className="text-sm font-bold uppercase tracking-widest text-foreground mb-6">Skills Técnicos</h3>
           <div className="flex flex-wrap gap-2">
-            {["Power BI", "Excel Avanzado", "n8n", "Bizagi", "PostgreSQL", "Laravel", "Python", "Docker"].map(
-              (skill) => (
-                <Badge key={skill} variant="secondary" className="bg-secondary/10 text-secondary border-none px-3 py-1">
-                  {skill}
-                </Badge>
-              ),
-            )}
+            {[
+              "Python",
+              "Laravel (PHP)",
+              "PostgreSQL",
+              "n8n (IPA)",
+              "Bizagi (BPMN)",
+              "Docker (IaC)",
+              "Internet de las Cosas (IoT)",
+              "Big Data",
+              "Gobierno de Datos",
+              "Agile (Scrum)",
+              "Power BI",
+              "Excel Avanzado",
+            ].map((skill) => (
+              <Badge key={skill} variant="secondary" className="bg-secondary/10 text-secondary border-none px-3 py-1">
+                {skill}
+              </Badge>
+            ))}
           </div>
         </div>
       </section>
@@ -136,15 +153,35 @@ export default function Page() {
               </header>
               <div className="z-10 sm:col-span-6">
                 <h3 className="font-medium leading-snug text-foreground">
-                  <div>
-                    <a
-                      className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Certificación: Desarrollo con IA · BIG School
-                    </a>
-                  </div>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base cursor-pointer text-left focus:outline-none"
+                      >
+                        <span className="flex items-center gap-2">
+                          Certificación: Desarrollo con IA · BIG School
+                          <Eye className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity text-primary" />
+                        </span>
+                      </button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
+                      <DialogHeader className="pb-2">
+                        <DialogTitle className="text-foreground">
+                          Certificación: Desarrollo con IA - BIG School
+                        </DialogTitle>
+                        <DialogDescription>
+                          Curso de iniciación al desarrollo con IA (Solo Vista Previa)
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
+                        <iframe
+                          src="/Certificado_Desarrollo_IA.pdf#toolbar=0&navpanes=0"
+                          className="w-full h-full"
+                          title="Certificado de Desarrollo con IA"
+                        />
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </h3>
                 <p className="mt-2 text-sm leading-normal text-muted-foreground">
                   La inteligencia artificial no ha llegado para reemplazar a los desarrolladores, sino para potenciarlos, transformando su rol de un "picacódigo" manual a un arquitecto y orquestador estratégico de sistemas inteligentes.
@@ -153,6 +190,15 @@ export default function Page() {
             </div>
           </li>
         </ol>
+      </section>
+
+      <section id="academic" className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24">
+        <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">
+            Historial Académico
+          </h2>
+        </div>
+        <AcademicHistory />
       </section>
     </PortfolioLayout>
   )
