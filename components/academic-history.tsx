@@ -227,7 +227,6 @@ export function AcademicHistory() {
             <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Créditos Aprobados</span>
             <div className="flex items-baseline gap-2 mt-2">
               <span className="text-2xl font-bold text-foreground">157</span>
-              <span className="text-xs text-muted-foreground">/ 178 aprox.</span>
             </div>
             <span className="text-xs text-muted-foreground mt-2 block">Ciclos I al VII</span>
           </CardContent>
