@@ -15,6 +15,14 @@ export function PortfolioLayout({ children }: { children: ReactNode }) {
           {/* Header / Sidebar */}
           <header className="lg:sticky lg:top-24 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-0">
             <div>
+              {/* Foto de Perfil */}
+              <div className="relative mb-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-primary/30 hover:border-primary/80 shadow-[0_0_15px_rgba(168,85,247,0.15)] hover:shadow-[0_0_25px_rgba(168,85,247,0.3)] transition-all duration-300 group/avatar">
+                <img
+                  src="/Cesar_Sanchez.png"
+                  alt="Cesar Sanchez Chiroque"
+                  className="w-full h-full object-cover scale-100 group-hover/avatar:scale-105 transition-transform duration-500"
+                />
+              </div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Cesar Diego Sanchez Chiroque</h1>
               <h2 className="mt-3 text-lg font-medium tracking-tight text-primary sm:text-xl">
                 Practicante en Ingieneria de Sistemas e Inteligencia Artificial
