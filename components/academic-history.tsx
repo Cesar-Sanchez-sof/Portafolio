@@ -209,7 +209,7 @@ export function AcademicHistory() {
   return (
     <div className="space-y-8">
       {/* Overview Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Card className="bg-card/30 border-primary/20 backdrop-blur-sm">
           <CardContent className="p-4 flex flex-col justify-between h-full">
             <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Universidad</span>
@@ -239,16 +239,6 @@ export function AcademicHistory() {
               <span className="text-2xl font-bold text-foreground">8º Ciclo</span>
             </div>
             <span className="text-xs text-emerald-500 mt-2 block">21 créditos activos</span>
-          </CardContent>
-        </Card>
-
-        <Card className="bg-card/30 border-emerald-500/20 backdrop-blur-sm">
-          <CardContent className="p-4 flex flex-col justify-between h-full">
-            <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Especialidad</span>
-            <div className="flex items-baseline gap-2 mt-2">
-              <span className="text-lg font-bold text-foreground truncate block w-full">IA y Sistemas</span>
-            </div>
-            <span className="text-xs text-muted-foreground mt-2 block">Ingeniería UPAO</span>
           </CardContent>
         </Card>
       </div>
