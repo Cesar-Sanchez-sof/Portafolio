@@ -60,16 +60,15 @@ interface SemesterData {
 
 const ACADEMIC_DATA: SemesterData[] = [
   {
-    period: "2026-I (En Progreso)",
-    average: "N/A",
-    approvedCredits: 21,
+    period: "2026-I (8º Ciclo)",
+    average: "15.65",
+    approvedCredits: 17,
     courses: [
-      { code: "ICSI 677", name: "Internet de las Cosas (IoT)", grade: "En progreso", credits: 4, category: "infra" },
-      { code: "ICSI 678", name: "Gestión de Proyectos de Sistemas de Información", grade: "En progreso", credits: 4, category: "negocios" },
-      { code: "ISIA 113", name: "Customer Development", grade: "En progreso", credits: 3, category: "negocios" },
-      { code: "ISIA 116", name: "Big Data y Analítica de Datos", grade: "En progreso", credits: 4, category: "ia" },
-      { code: "ISIA 117", name: "Proyecto de Investigación", grade: "En progreso", credits: 3, category: "humanidades" },
-      { code: "ISIA 118", name: "Gobierno de Datos", grade: "En progreso", credits: 3, category: "ia" },
+      { code: "ICSI 677", name: "Internet de las Cosas (IoT)", grade: 16, credits: 4, category: "infra" },
+      { code: "ISIA 113", name: "Customer Development", grade: 15, credits: 3, category: "negocios" },
+      { code: "ISIA 116", name: "Big Data y Analítica de Datos", grade: 16, credits: 4, category: "ia" },
+      { code: "ISIA 117", name: "Proyecto de Investigación", grade: 16, credits: 3, category: "humanidades" },
+      { code: "ISIA 118", name: "Gobierno de Datos", grade: 15, credits: 3, category: "ia" },
     ]
   },
   {
@@ -226,9 +225,9 @@ export function AcademicHistory() {
           <CardContent className="p-4 flex flex-col justify-between h-full">
             <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Créditos Aprobados</span>
             <div className="flex items-baseline gap-2 mt-2">
-              <span className="text-2xl font-bold text-foreground">157</span>
+              <span className="text-2xl font-bold text-foreground">174</span>
             </div>
-            <span className="text-xs text-muted-foreground mt-2 block">Ciclos I al VII</span>
+            <span className="text-xs text-muted-foreground mt-2 block">Ciclos I al VIII</span>
           </CardContent>
         </Card>
 
@@ -236,16 +235,16 @@ export function AcademicHistory() {
           <CardContent className="p-4 flex flex-col justify-between h-full">
             <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Ciclo Actual</span>
             <div className="flex items-baseline gap-2 mt-2">
-              <span className="text-2xl font-bold text-foreground">8º Ciclo</span>
+              <span className="text-2xl font-bold text-foreground">9º Ciclo</span>
             </div>
-            <span className="text-xs text-emerald-500 mt-2 block">21 créditos activos</span>
+            <span className="text-xs text-emerald-500 mt-2 block">Ciclo 2026-II</span>
           </CardContent>
         </Card>
       </div>
 
       {/* Filter and Search Bar */}
       <div className="space-y-4">
-        <div className="flex flex-col md:flex-row gap-3">
+        <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -256,6 +255,28 @@ export function AcademicHistory() {
               className="pl-9 bg-card/40 border-border/80 focus:border-primary/50 text-sm"
             />
           </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="flex items-center gap-2 bg-card/40 border-border/80 hover:text-primary hover:border-primary/50 text-sm shrink-0 cursor-pointer">
+                <Eye className="h-4 w-4 text-primary" />
+                <span>Ver Historial Académico PDF</span>
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
+              <DialogHeader className="pb-2">
+                <DialogTitle className="text-foreground">
+                  Histórico Académico Oficial UPAO
+                </DialogTitle>
+              </DialogHeader>
+              <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
+                <iframe
+                  src="/documentos/Historico_Academico.pdf#toolbar=0&navpanes=0"
+                  className="w-full h-full"
+                  title="Histórico Académico"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
         {/* Category Filter Pills */}
@@ -351,7 +372,7 @@ export function AcademicHistory() {
         </Card>
       ) : (
         /* Default view: Grouped by Semester in an Accordion */
-        <Accordion type="single" collapsible defaultValue="2026-I (En Progreso)" className="w-full space-y-3">
+        <Accordion type="single" collapsible defaultValue="2026-I (8º Ciclo)" className="w-full space-y-3">
           {ACADEMIC_DATA.map((sem) => (
             <AccordionItem
               key={sem.period}

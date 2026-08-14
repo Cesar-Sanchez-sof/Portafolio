@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react"
 
 export function PortfolioLayout({ children }: { children: ReactNode }) {
   return (
@@ -18,14 +18,14 @@ export function PortfolioLayout({ children }: { children: ReactNode }) {
               {/* Foto de Perfil */}
               <div className="relative mb-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-primary/30 hover:border-primary/80 shadow-[0_0_15px_rgba(168,85,247,0.15)] hover:shadow-[0_0_25px_rgba(168,85,247,0.3)] transition-all duration-300 group/avatar">
                 <img
-                  src="/Cesar_Sanchez.png"
+                  src="/documentos/Cesar_Sanchez.png"
                   alt="Cesar Sanchez Chiroque"
                   className="w-full h-full object-cover scale-100 group-hover/avatar:scale-105 transition-transform duration-500"
                 />
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Cesar Diego Sanchez Chiroque</h1>
               <h2 className="mt-3 text-lg font-medium tracking-tight text-primary sm:text-xl">
-                Practicante en Ingieneria de Sistemas e Inteligencia Artificial
+                Practicante en Ingeniería de Sistemas e Inteligencia Artificial
               </h2>
               <p className="mt-4 max-w-xs leading-normal text-muted-foreground">
                 Estudiante de Ingeniería de Computación y Sistemas en la UPAO, apasionado por la automatización
@@ -70,25 +70,51 @@ export function PortfolioLayout({ children }: { children: ReactNode }) {
               </nav>
             </div>
 
-            <ul className="ml-1 mt-8 flex items-center gap-5" aria-label="Social media">
+            <ul className="ml-1 mt-8 flex flex-wrap gap-3" aria-label="Social media">
               <li>
                 <a
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border/80 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all text-xs font-medium shadow-sm"
                   href="mailto:cdiegosanch8@gmail.com"
                   title="Email"
                 >
-                  <Mail className="h-6 w-6" />
+                  <Mail className="h-4 w-4" />
+                  <span>Email</span>
                 </a>
               </li>
               <li>
                 <a
-                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border/80 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all text-xs font-medium shadow-sm"
                   href="https://www.linkedin.com/in/cesar-sanchez-aa68593a0"
                   target="_blank"
                   rel="noreferrer"
                   title="LinkedIn"
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <Linkedin className="h-4 w-4" />
+                  <span>LinkedIn</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border/80 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all text-xs font-medium shadow-sm"
+                  href="https://github.com/Cesar-Sanchez-sof"
+                  target="_blank"
+                  rel="noreferrer"
+                  title="GitHub"
+                >
+                  <Github className="h-4 w-4" />
+                  <span>GitHub</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-card border border-border/80 text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all text-xs font-medium shadow-sm"
+                  href="https://wa.me/51907905925"
+                  target="_blank"
+                  rel="noreferrer"
+                  title="WhatsApp"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  <span>WhatsApp</span>
                 </a>
               </li>
             </ul>

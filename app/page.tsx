@@ -1,3 +1,5 @@
+"use client"
+
 import { PortfolioLayout } from "@/components/portfolio-layout"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -22,15 +24,13 @@ export default function Page() {
         </div>
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            Soy un estudiante de Ingeniería de Computación y Sistemas en la{" "}
-            <span className="text-foreground font-medium">UPAO</span>, con una visión innovadora enfocada en la
-            intersección de la <span className="text-secondary font-medium">Inteligencia Artificial</span> y la
-            Ingeniería de Software.
+            Soy un estudiante de Ingeniería de Sistemas e Inteligencia Artificial en la{" "}
+            <span className="text-foreground font-medium">UPAO</span>, con una alta capacidad de adaptación para
+            desempeñarme en diversas áreas de mi carrera, tales como la <span className="text-secondary font-medium">Ciencia de Datos</span>,
+            la <span className="text-secondary font-medium">Inteligencia Artificial</span>, la <span className="text-secondary font-medium">Ingeniería de Software</span> y la <span className="text-secondary font-medium">Gestión de Proyectos Tecnológicos</span>.
           </p>
           <p>
-            Mi enfoque se centra en la creación de soluciones escalables y la automatización de procesos mediante
-            tecnologías de vanguardia. Actualmente, cuento con disponibilidad inmediata para roles de practicante en
-            Trujillo o de forma remota.
+            Mi enfoque se orienta al diseño y desarrollo de soluciones tecnológicas integrales que optimicen procesos y aporten valor a la organización. Actualmente, cuento con disponibilidad inmediata para roles de practicante en Trujillo o de forma remota.
           </p>
           <Button asChild className="mt-4 bg-primary hover:bg-primary/90 text-white">
             <a href="https://wa.me/51907905925">Contactar Ahora</a>
@@ -134,14 +134,12 @@ export default function Page() {
                 <h3 className="font-medium leading-snug text-foreground">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <button
-                        className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base cursor-pointer text-left focus:outline-none"
+                      <span
+                        className="inline-flex items-center gap-2 font-medium leading-tight text-foreground hover:text-primary group/link text-base cursor-pointer text-left"
                       >
-                        <span className="flex items-center gap-2">
-                          Ingeniería de Computación y Sistemas · UPAO
-                          <Eye className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity text-primary" />
-                        </span>
-                      </button>
+                        Ingeniería de Computación y Sistemas · UPAO
+                        <Eye className="h-4 w-4 text-primary shrink-0 opacity-70 group-hover/link:opacity-100 transition-opacity" />
+                      </span>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
                       <DialogHeader className="pb-2">
@@ -154,7 +152,7 @@ export default function Page() {
                       </DialogHeader>
                       <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
                         <iframe
-                          src="/Estudia_Ingenieria_Sistemas_e_IA.pdf#toolbar=0&navpanes=0"
+                          src="/documentos/Estudia_Ingenieria_Sistemas_e_IA.pdf#toolbar=0&navpanes=0"
                           className="w-full h-full"
                           title="Plan de Estudios UPAO"
                         />
@@ -181,14 +179,12 @@ export default function Page() {
                 <h3 className="font-medium leading-snug text-foreground">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <button
-                        className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base cursor-pointer text-left focus:outline-none"
+                      <span
+                        className="inline-flex items-center gap-2 font-medium leading-tight text-foreground hover:text-primary group/link text-base cursor-pointer text-left"
                       >
-                        <span className="flex items-center gap-2">
-                          Certificación: Desarrollo con IA · BIG School
-                          <Eye className="h-4 w-4 opacity-0 group-hover/link:opacity-100 transition-opacity text-primary" />
-                        </span>
-                      </button>
+                        Certificación: Desarrollo con IA · BIG School
+                        <Eye className="h-4 w-4 text-primary shrink-0 opacity-70 group-hover/link:opacity-100 transition-opacity" />
+                      </span>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl h-[90vh] bg-card border-primary/20 flex flex-col p-4">
                       <DialogHeader className="pb-2">
@@ -201,7 +197,7 @@ export default function Page() {
                       </DialogHeader>
                       <div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border border-border">
                         <iframe
-                          src="/Certificado_Desarrollo_IA.pdf#toolbar=0&navpanes=0"
+                          src="/documentos/Certificado_Desarrollo_IA.pdf#toolbar=0&navpanes=0"
                           className="w-full h-full"
                           title="Certificado de Desarrollo con IA"
                         />
